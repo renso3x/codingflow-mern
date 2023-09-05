@@ -44,7 +44,7 @@ const NotesPageLoggedInView = () => {
   }
 
   const notesGrid = (
-    <Row xs={1} md={2} xl={3} className={`g-4 ${styles.noteGrid}`}>
+    <Row xs={1} md={2} xl={3} className={`g-4 ${styles.notesGrid}`}>
       {notes.map(note => (
         <Col key={note._id}>
           <Note
@@ -72,7 +72,7 @@ const NotesPageLoggedInView = () => {
           {
             notes.length > 0
             ? notesGrid
-            : <p> YOu don't have any notes yet.</p>
+            : <p> You don't have any notes yet.</p>
           }
         </>
       }

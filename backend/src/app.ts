@@ -8,6 +8,7 @@ import NotesRouter from './routes/notes'
 import UserRouter from './routes/users'
 import env from './util/validateEnv'
 import morgan from 'morgan'
+import { requiresAuth } from "./middleware/auth"
 import session from 'express-session'
 
 const app = express()
@@ -28,7 +29,7 @@ app.use(session({
 }))
 
 // ROUTER
-app.use('/api/notes', NotesRouter)
+app.use('/api/notes', requiresAuth, NotesRouter)
 app.use('/api/users', UserRouter)
 
 app.use((req, res, next) => {
