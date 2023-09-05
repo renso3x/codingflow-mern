@@ -90,3 +90,13 @@ export const login: RequestHandler<unknown, unknown, LoginBody, unknown> = async
         next(error)
     }
 }
+
+
+export const logout: RequestHandler = (req, res, next) => {
+    req.session.destroy(error => {
+        if (error) { next(error) }
+        else {
+            res.sendStatus(200)
+        }
+    })
+}
