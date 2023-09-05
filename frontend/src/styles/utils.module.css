@@ -9,3 +9,6 @@
     align-items: center;
     gap: 4px;
 }
+.w100 {
+    width: 100%;
+}
